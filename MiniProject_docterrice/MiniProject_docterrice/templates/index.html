@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block content %}
+
+<h2 style="font-family: 'Prompt';">อัปโหลดรูปข้าว</h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label button">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview" style="text-align: center; margin-top: 2em;">
+            <div id="imagePreview" style="width: 780px; height: 380px; background-size: cover;">
+            </div>
+        </div>
+        <p id="additional-info" style="font-family: 'Prompt'; font-size: 25px; position: absolute; top: 250px; right: 90px;  white-space: pre-line; text-align: center;">
+        </p>
+        <div>
+            <button type="button" class="btn btn-outline-dark btn-lg" id="btn-predict" style="font-family: 'Prompt'; position: absolute; top: 170px; left: 1250px;">Predict   📤 </button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+    
+<!-- Add this script tag at the end of the body section -->
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+
+
+</div>
+    <div>
+    <h3 id="result" style="font-family: 'Bebas Neue', sans-serif; text-align: center; background-color: #F8F8F8; border: 2px solid #4CAF50; border-radius: 90px; padding: 15px;">
+        <span> </span>
+    </h3>
+    <p id="additional-info2" style="font-family: 'Prompt'; font-size: 23px; white-space: pre-line; text-align: center; "></p>
+
+    <img id="additional-info3" class="disease-image" src="" alt="ยา" style="display: none;">
+    <a id="goLink" href="file:///C:/Users/Admin/Downloads/hfghgfhf/minih5webtest/templates/salespage.html" class="btn btn-warning" style="display: none; font-family: 'Kanit'"> สั่งซื้อคลิ๊ก 🛒</a>
+    </div>
+</div>
+
+
+{% endblock %}
